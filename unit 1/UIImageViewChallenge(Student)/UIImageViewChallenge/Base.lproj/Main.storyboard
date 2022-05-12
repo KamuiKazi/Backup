@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIImageViewChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oTL-3W-yDy">
+                                <rect key="frame" x="14" y="382.66666666666669" width="386" height="31"/>
+                                <connections>
+                                    <action selector="whenSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="RbH-pU-Zk5"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move the Slider Left and Right" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-tj-Lvf">
+                                <rect key="frame" x="92.666666666666686" y="437.66666666666669" width="229" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bianry" translatesAutoresizingMaskIntoConstraints="NO" id="dSd-Mj-syJ">
+                                <rect key="frame" x="35" y="129" width="322" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-zl-rzY">
+                                <rect key="frame" x="131" y="555" width="140" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Change Me">
+                                    <color key="titleColor" cyan="0.73999999999999999" magenta="0.70588237050000002" yellow="0.64313727620000005" black="0.87058824300000004" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FOL-KC-exN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oTL-3W-yDy" secondAttribute="trailing" constant="16" id="4V6-TH-bsu"/>
+                            <constraint firstItem="lzM-tj-Lvf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CWI-Js-hNc"/>
+                            <constraint firstItem="lzM-tj-Lvf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lNI-kx-4Zy"/>
+                            <constraint firstItem="lzM-tj-Lvf" firstAttribute="top" secondItem="oTL-3W-yDy" secondAttribute="bottom" constant="25" id="mxi-1a-1DU"/>
+                            <constraint firstItem="oTL-3W-yDy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wMg-12-6IS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="disappearingImageView" destination="dSd-Mj-syJ" id="Zdt-Rt-bPC"/>
+                        <outlet property="slider" destination="oTL-3W-yDy" id="OlC-2T-6mg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113.04347826086958" y="125.89285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bianry" width="2560" height="1200"/>
+    </resources>
+</document>
