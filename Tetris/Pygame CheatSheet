@@ -1,0 +1,72 @@
+import pygame
+import sys
+
+# define colors in the RGB format
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+def main():
+    # set up pygame and its screen
+    pygame.init()
+    screen_size = (1200, 800)
+    screen = pygame.display.set_mode(screen_size)
+
+    # add window caption
+    pygame.display.set_caption('My Cool Game')
+
+    # set up font and text; size=25, bold=True, italic=False
+    font = pygame.font.SysFont('Arial', 25, True, False)
+    text = font.render("Hello, Pygame!", True, BLACK)
+
+    # load sound file
+    # sound = pygame.mixer.Sound('song.wav')
+
+    # load image file
+    # image = pygame.image.load("picture.png").convert()
+
+    # create a clock to track time
+    clock = pygame.time.Clock()
+
+    while True:
+        # handle mouse and keyboard events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                print('key is pressed')
+                if event.key == pygame.K_RETURN:
+                    # play sound
+                    # sound.play()
+                    print('return is pressed')
+            elif event.type == pygame.KEYUP:
+                print('key is released')
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                print('mouse button is pressed')
+            elif event.type == pygame.MOUSEBUTTONUP:
+                print('mouse button is released')
+
+        # fills screen with a background color
+        screen.fill(WHITE)
+
+        # create your graphics here
+        pygame.draw.line(screen, BLACK, [100, 350], [500, 350], 2)
+        pygame.draw.polygon(screen, BLACK, [[50, 300], [550, 300], [300, 150]], 6)
+        pygame.draw.rect(screen, BLACK, [50, 400, 500, 200], 5)
+        pygame.draw.ellipse(screen, BLACK, [50, 400, 500, 200])
+
+        # display text on screen
+        screen.blit(text, [200, 100])
+
+        # display image on screen
+        # screen.blit(image, [600, 100])
+
+        # to get the cursor position
+        (cursor_x, cursor_y) = pygame.mouse.get_pos()
+
+        # refresh everyting on screen
+        pygame.display.flip()
+
+        # limit the update to 60 frames per second
+        clock.tick(60)
+
+main()
